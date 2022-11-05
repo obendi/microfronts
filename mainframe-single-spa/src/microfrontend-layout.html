@@ -1,0 +1,35 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <main>
+    <nav>
+      <ul>
+        <li><a href="/" onclick="singleSpaNavigate(event)">MF-USER (VanilaJS)</a></li>
+        <li><a href="/account" onclick="singleSpaNavigate(event)">MF-ACCOUNT (ReactJS)</a></li>
+      </ul>
+    </nav>
+
+    <route default>
+      <application name="@bendi/mf-user"></application>
+    </route>
+    <route path="/account">
+      <application name="@bendi/mf-account"></application>
+    </route>
+  </main>
+</single-spa-router>
